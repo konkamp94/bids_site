@@ -1,0 +1,46 @@
+
+<form #search="ngForm" class="form-inline" (ngSubmit) = "onSearch(search)">
+<div class="row">
+	    <div class="col-xs-6 col-sm-4 paddingright0">
+		     	<input type="text" class="form-control searchbars" name="search" placeholder="Search" id="txtSearch" ngModel/>
+	    </div>
+	    <div class="col-xs-1 col-sm-2 paddingleft0">
+		    <button class="btn btn-primary btn-group" type="submit">
+				      <span class="glyphicon glyphicon-search"></span>
+		    </button>
+		</div>
+	    <div class="col-xs-5 col-sm-4">
+			 <a id="advanced" (click)="onAdvanced()">advanced search</a>
+	    </div>
+</div>
+<div class="row top_space" *ngIf="advanced">
+   <div class="col-sm-4 ">
+	 <select  id="category" ngModel class="custom-select form-control"  name="category" placeholder="Category">
+			 	<option value="" disabled selected>Category</option>
+                <option *ngFor="let category of categories" [value]="category.category_id">{{category.cat_name}}</option>
+     </select>
+   </div>
+   <div class="col-sm-4 form-group">
+   	<label>Price From: </label>
+   		<input  class="form-control" type="number" name="min" min="0" step="any" placeholder="$" ngModel>
+   </div>
+   <div class="col-sm-4">
+   		<label>To: </label>
+   		<input  class="form-control " type="number" name="max" min="0" step="any" placeholder="$" ngModel>
+   </div>
+</div>
+<div class="row top_space" *ngIf="advanced">
+	<div class="form-inline col-sm-12">
+		<label>Country: </label>
+		<input class="form-control" type="text" name="country" ngModel>
+	</div>
+</div>
+</form>
+
+	<div *ngIf="emptysearch" class="row">
+		<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+			 <div id="empty" class="alert alert-danger">
+			    <strong>Please provide keywords or more filters for the search</strong>
+			 </div>
+		</div>
+	</div>

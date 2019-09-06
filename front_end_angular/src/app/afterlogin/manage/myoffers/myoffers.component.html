@@ -1,0 +1,26 @@
+<div class="container">
+	<table class="table table-hover table-responsive">
+	  <tr>
+	  	 <th>Product Name</th>
+	  	 <th>Last Bid</th>
+	  	 <th>Buy Price</th>
+	  	 <th>Last Bidder</th>
+	  	 <th>Expired</th>
+	  	 <th>Bought</th>
+	  </tr>
+	  <tr *ngFor="let offer of offers; let i = index">
+	  		<td>{{offer.name}}</td>
+	  		<td>{{offer.currently}}</td>
+	  		<td>{{offer.buy_price}}</td>
+	  		<td>{{offer.last_bidder}}</td>
+	  		<td *ngIf="onDateComparison(offer.enddate); else expired">no</td>
+	  		<ng-template #expired>
+			    <td>yes</td>
+			</ng-template>
+	  		<td *ngIf="offer.bought===0;else isbought">no</td>
+	  		<ng-template #isbought>
+			    <td>yes</td>
+			</ng-template>
+	  </tr>
+	</table>
+</div>

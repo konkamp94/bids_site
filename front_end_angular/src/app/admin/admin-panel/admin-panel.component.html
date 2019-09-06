@@ -1,0 +1,14 @@
+
+<div id="admin_nav"class="container">
+	<h1>Administrator Panel <button class="btn btn-primary" (click)="onLogout()">Logout</button></h1>
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-3 col-sm-offset-3 col-sm-3">
+			<button class="btn btn-primary" (click)="onNotApproved()">Not approved Users</button>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+			<button class="btn btn-primary"(click)="onApproved()">Approved Users</button>
+		</div>
+	</div>
+</div>
+<app-user-table *ngIf="notapproved && clicked"></app-user-table>
+<app-user-approved-table *ngIf="!(notapproved) && clicked"></app-user-approved-table>

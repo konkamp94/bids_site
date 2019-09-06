@@ -1,0 +1,110 @@
+#users{
+	border-right: 2px solid #145C8F;
+}
+ul{
+	list-style-type: none;
+}
+#headingconn{
+	background-color:  #145C8F;
+	color: white;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 15px;
+}
+.userspan{
+	line-height:50px;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.usersli{
+	text-align: center;
+	height: 50px;
+	background-color: #145C8F;
+	border-bottom: 2px solid white;
+	border-radius: 15px;
+	color: white; 
+	vertical-align: middle;
+ }
+ .usersli:hover { 
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-color: black ;
+}
+.active_user{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-color: black ;
+}
+#messages{
+
+}
+#selectconnspan{
+	line-height:300px;
+	font-weight: bolder;
+	font-size: 20px;
+	color: #145C8F;
+	background-color: #dbe9ff;
+	padding: 10px;
+	border-radius: 15px;
+}
+#selectconnli{
+	text-align: center;
+}
+.nomessage{
+	text-align: center;
+}
+.nomessagespan{
+	line-height:300px;
+	font-weight: bolder;
+	font-size: 20px;
+	color: #145C8F;
+	background-color: #dbe9ff;
+	padding: 10px;
+	border-radius: 15px;
+}
+.othermessagename{
+	color:green;
+	margin-top: 0px;
+}
+.othermessage{
+	border-radius: 15px;
+	padding:5px;
+	display:inline-block;
+	background-color: #dbe9ff;
+	color:#145C8F;
+	margin-bottom: 3px;
+}
+.mymessagename{
+	color: #145C8F;
+	margin-top: 0px;
+}
+.mymessage{
+	border-radius: 15px;
+	padding:5px;
+	display:inline-block;
+	background-color: #145C8F;
+	color:white;
+	margin-bottom: 3px;
+}
+#textmessage{
+	resize: none;
+	width: 100%;
+    height: 100px;
+}
+#send{
+	float: right;
+	margin-top: 5px;
+}
+hr.good {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+hr.hrchat{
+	margin-top: 10px;
+    margin-bottom: 10px;
+}

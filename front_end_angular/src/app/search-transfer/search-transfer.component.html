@@ -1,0 +1,64 @@
+<div class=container> 
+	  		<app-searchbar></app-searchbar>
+	  	<ul class="list-group">
+	  			  
+				  <li *ngFor="let product of products; let i = index"  class="list-group-item product_list">
+						<div class="row">
+							<div class="col-sm-4 image">
+								<img [src]="product.image">
+							</div>
+								<div class="col-sm-8">
+									<div class="row">
+										<div class="col-sm-12">
+											<h1><a class="product_name"href="#">{{product.name}}</a></h1>
+										</div>
+										<div class="col-sm-5">
+											<label class="label_desc">Description</label>
+											<p class="p_desc">{{product.description}}</p>
+										</div>
+										<div class="col-sm-7">
+												 <form>
+												 	 <div class="row">
+											    		<div class= col-sm-12> 	
+															 <label class="label_desc">make your bid:</label>
+													     </div>
+													     <div class="col-sm-12">
+															 <input [id]="product.item_id" class="bid_in" type="number" name="bid" min="{{product.currently + 1}}" step="any" value ="{{product.currently + 1}}" #bid>
+														 </div>
+													     <div class="col-sm-12">
+													 		<button class="btn btn-primary" (click)="onBid(bid)" type="sumbit" name="sumbit">Bid</button>
+													 	</div>
+													 </div>
+												 </form>	
+										</div>
+									</div>
+									<div class="row">
+									 	<div class="col-sm-5">
+											 <label class="label_desc">Last Bid: &nbsp;</label>
+											 <span [attr.data-id]='product.item_id'>{{product.currently}}</span><br>
+											 <label class="label_desc">Buy Price: &nbsp;</label>
+											 <span>{{product.buy_price}}</span><br>
+											 <label class="label_desc">Seller: &nbsp;</label>
+											 <span>{{product.user_id}}</span><br>
+											 <label class="label_desc">Location: &nbsp;</label>
+											 <span>{{product.location}},{{product.country}}</span>
+										</div>
+										<div class="col-sm-7 row">
+											<div class="col-sm-12">
+												<label class="label_desc">Rating: &nbsp;</label>
+												<span>{{product.rating}}</span><br>
+											</div>
+											<div class="col-sm-12">
+												<label class="label_desc">Expires at: &nbsp;</label>
+											</div>
+											<div class="col-sm-12">
+											<span>{{product.expired}}</span><br>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+						</div>
+				  </li>
+			
+		</ul>

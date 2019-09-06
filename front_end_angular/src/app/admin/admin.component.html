@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Administrator Login</h1>
+</div>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfX7S-kEZdDmczOqUo9YkG2mDOrc1KFcWUSBJ5gQQY5B0aHmyHgA" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form #loginForm="ngForm" (ngSubmit) = "onLogin(loginForm)">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="username" ngModel>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+    <div *ngIf="log_err" class="alert alert-danger">
+      Wrong Password or Username! Please Try again! 
+    </div>
+    
+
+  </div>
+</div>

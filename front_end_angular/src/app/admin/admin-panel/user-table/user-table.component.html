@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="table-responsive">
+		<table class="table table-hover">
+		   <tr>
+		  	 <th>Username</th>
+		  	 <th>Name</th>
+		  	 <th>Surname</th>
+		  	 <th>Email</th>
+		  	 <th>Phone</th>
+		  	 <th>Address</th>
+		  	 <th>City</th>
+		  	 <th>Country</th>
+		  	 <th>Tax Id Number</th>
+		  	 <th>Act</th>
+		  </tr>
+		  <tr id="{{user.user_id+'tr'}}" *ngFor="let user of users; let i = index">
+		  		<td>{{user.user_id}}</td>
+		  		<td>{{user.name}}</td>
+		  		<td>{{user.surname}}</td>
+		  		<td>{{user.email}}</td>
+		  		<td>{{user.phone}}</td>
+		  		<td>{{user.address}}</td>
+		  		<td>{{user.city}}</td>
+		  		<td>{{user.country}}</td>
+		  		<td>{{user.afm}}</td>
+		  		<td><button id="{{user.user_id}}" class="btn btn-success" (click)="onApprove($event)">Approve</button>
+		  			<button id="{{user.user_id}}" class="btn btn-danger" (click)="onDelete($event)">Delete</button>
+		  		</td>
+		  </tr>
+		</table>
+	</div>
+
+
+</div>

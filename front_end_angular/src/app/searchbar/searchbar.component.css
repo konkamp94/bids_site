@@ -1,0 +1,23 @@
+#empty{
+	text-align: center;
+}
+#advanced{
+	cursor: pointer;
+}
+.searchbars{
+	width: 100%;
+}
+.paddingright0{
+	padding-right:0;
+    
+}
+.paddingleft0{
+	padding-left: 0;
+}
+.top_space{
+	margin-top: 7px;
+}
+#searchbox{
+	border: 2px #145C8F;
+	background-color: #145C8F;
+}

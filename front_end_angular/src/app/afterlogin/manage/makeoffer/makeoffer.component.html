@@ -1,0 +1,141 @@
+<div  id="makeoffer" class="container">
+  <h1>Make Offer</h1>
+  <form #offer="ngForm" (ngSubmit)="makeOffer(offer)">
+    <div class="row">
+        <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Product Name" name="name" ngModel required minlength="6" maxlength="50" #name="ngModel" required>
+                  </div>
+
+                              <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="name.errors.required" class="wrong">
+                                    Product Name is required!
+                                  </div>
+                                  <div *ngIf="name.errors.minlength" class="wrong">
+                                    Product Name must be at least 6 characters long!
+                                  </div>
+                              </div>
+
+                  <div class="form-group">
+                     <label for="desc">Description</label>
+                     <textarea type="text" class="form-control" id="desc" placeholder="Description" name="desc" ngModel #desc="ngModel" required minlength="20" maxlength="300" required rows="3"></textarea>
+                  </div>             
+
+                            <div *ngIf="desc.invalid && (desc.dirty || desc.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="desc.errors.required" class="wrong">
+                                    Description is required!
+                                  </div>
+                                  <div *ngIf="desc.errors.minlength" class="wrong">
+                                    Description must be at least 20 characters long!
+                                  </div>
+                              </div>
+  
+                  <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" placeholder="Location" name="location" #location ="ngModel" ngModel required>
+                  </div>  
+
+                              <div *ngIf="location.invalid && (location.dirty || location.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="location.errors.required" class="wrong">
+                                    Location is required!
+                                  </div>
+                              </div>
+
+                  <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" placeholder="Country" name="country" #country ="ngModel" ngModel required>
+                  </div>
+
+                            <div *ngIf="country.invalid && (country.dirty || country.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="country.errors.required" class="wrong">
+                                    Country is required!
+                                  </div>
+                              </div>
+
+                  <div class="form-group">
+                    <label for="start_bid">Starting Bid</label>
+                    <input type="number" step="any" class="form-control" id="start_bid" min="0" name="start_bid" #start ="ngModel" ngModel required>
+                  </div>
+
+                              <div *ngIf="start.invalid && (start.dirty || start.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="start.errors.required" class="wrong">
+                                    Start Bid is required!
+                                  </div>
+                              </div>
+          </div>
+
+        <div class="col-sm-6">
+                 <div class="form-group">
+                    <label for="buy">Buy Price</label>
+                    <input type="number" step="any" class="form-control" id="buy" min="0" name="buy" ngModel #buy ="ngModel" required>
+                  </div>
+
+                            <div *ngIf="buy.invalid && (buy.dirty || buy.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="buy.errors.required" class="wrong">
+                                    Buy Price is required!
+                                  </div>
+                              </div>
+                  <div class="form-group">
+                       <!--   <div *ngFor="let category of categories" class="custom-control custom-checkbox">
+                            
+                            <input name="categories" [value]="category.category_id"  ngModel type="checkbox" class="custom-control-input" [id]="category.category_id">
+                            <label class="custom-control-label" for="category.category_id">{{category.cat_name}}</label>
+                         </div> -->
+                         <label for="category">Category</label><br>
+                         <select id="category" ngModel class="custom-select form-control"  name="category" multiple>
+                            <option *ngFor="let category of categories" [value]="category.category_id">{{category.cat_name}}</option>
+                         </select>
+ 
+                  </div>
+                  <div class="form-group">
+                    <label for="bid_dur">Bid's Duration</label>
+                    <input type="number" min="0" class="form-control" id="bids_dur" placeholder="Days" name="bids_dur" ngModel #dur ="ngModel" required>
+                  </div>
+
+                                <div *ngIf="dur.invalid && (dur.dirty || dur.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="dur.errors.required" class="wrong">
+                                    Bid's Duration is required!
+                                  </div>
+                              </div>
+                  <div class="form-group fileinput fileinput-new" data-provides="fileinput">
+                      <label>Product Image</label>
+                      <input type="file" (change)="onPick($event)" multiple ngModel name="image" required #img ="ngModel">
+                      <span class="fileinput-filename"></span>
+
+                      <div *ngIf="img.invalid && (img.dirty || img.touched)"
+                              class="help-block">
+
+                                  <div *ngIf="img.errors.required" class="wrong">
+                                    Select an image of the Product!
+                                  </div>
+                              </div>
+                  </div>
+
+                   <div id="button">
+                    <button type="submit" class="btn btn-default" [disabled]="!offer.valid">Submit</button>
+                  </div>
+        </div>
+      </div>
+  </form>
+</div>
+<!-- if rejects the data for username,email or passwordver the server *ngIf="reg_err" class="alert-danger" -->
+<!-- <div class="container">
+  <div *ngIf="reg_err" class="alert alert-danger">
+      See the info and try again
+  </div>
+</div> -->

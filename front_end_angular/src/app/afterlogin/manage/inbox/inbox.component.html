@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>{{this.user.getUser()+" "}} Inbox</h3>
+			<hr class="good">
+		</div>
+	</div>
+	<div class="row">
+		<div id="users" class="col-sm-4" style="height: 300px; overflow-y: auto">
+			<h4 id="headingconn">Connections</h4>
+			<hr class="hrchat">
+			<ul>
+				<li id="{{user}}" *ngFor="let user of connected_users" class="usersli" (click)="onSelectConnection($event)"><span class="userspan">{{user}}</span></li>
+			</ul>
+		</div>
+		<div id="messages" class="col-sm-8">
+			<ul id="message_list" (scroll)="onScroll()" style="height:300px;overflow-y: auto">
+				<li id="selectconnli"><span id="selectconnspan"*ngIf="empty" style="text-align: center;">Select a Connection</span></li>
+				<!-- <li><h4 class="othermessagename">rattlehead:</h4><p class="othermessage">u are cute</p><br><p class="othermessage">u are cute</p></li>
+				<hr class="hrchat">
+				<li><h4 class="mymessagename">Me:</h4><p class="mymessage">u too!</p></li> -->
+			</ul>
+			<div class="form-group">
+			  <textarea class="form-control"  id="textmessage"></textarea>
+			  <button id="send" type="submit" class="btn btn-primary" (click)="onSend()" [disabled]="button_disable">Send Message</button>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</div>

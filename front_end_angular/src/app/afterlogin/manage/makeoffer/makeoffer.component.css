@@ -1,0 +1,45 @@
+h1{
+  background-color: #145C8F;
+  color: #fff;
+  border: 2px solid #145C8F;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#makeoffer{
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+ /* border: 2px solid #145C8F;
+  border-radius: 25px;*/
+  border-radius: 25px;
+}
+
+button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-right: 110px; 
+  padding-left:110px;
+}
+
+#button {
+  position: relative;
+  margin-top: 70px;
+  background-color: red;
+}
+.btn-default {
+    color: #fff;
+    background-color: #145C8F;;
+    border-color: black;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #9e1111;
+}
+
+.legit{
+  color: #1c7c0b;
+}
+.wrong{
+  color: #9e1111;
+}
